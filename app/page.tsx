@@ -1,12 +1,17 @@
 import { BorderBox } from "@/app/component/common/Box";
 import Profile from "./component/main/profile/page";
+import ScrollToTopBtn from "./component/ScrollToTopBtn";
+import NavigationBar from "./component/NavigationBar";
 
 export default function Home() {
   return (
     <main>
-      <div>페이지시작</div>
-      <BorderBox boxStyle="square">BorderBox</BorderBox>
-      <Profile />
+      <NavigationBar />
+      <div>
+        <BorderBox boxStyle="square">BorderBox</BorderBox>
+        <Profile />
+      </div>
+      <ScrollToTopBtn />
     </main>
   );
 }
