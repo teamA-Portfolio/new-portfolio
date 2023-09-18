@@ -1,0 +1,24 @@
+@import "reset.css";
+
+* {
+  color: #efefef;
+}
+
+body {
+  background-color: #252525;
+
+  --leftSidePadding: 300px;
+  > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--leftSidePadding);
+    height: 100vh;
+    padding: 16px;
+    border-right: 1.5px solid #757575;
+  }
+  > main {
+    width: calc(100% - var(--leftSidePadding));
+    margin-left: var(--leftSidePadding);
+  }
+}

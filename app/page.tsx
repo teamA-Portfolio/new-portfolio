@@ -1,11 +1,7 @@
-import NavigationBar from "./component/navigationBar";
-
 export default function Home() {
   return (
     <main>
-      <div>
-        <NavigationBar></NavigationBar>
-      </div>
+      <div>페이지시작</div>
     </main>
-  )
+  );
 }
