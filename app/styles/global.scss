@@ -1,24 +1,35 @@
 @import "reset.css";
+@import "color.scss";
 
 * {
-  color: #efefef;
+  color: var(--white);
 }
 
 body {
-  background-color: #252525;
+  background-color: var(--black);
+  overflow-x: hidden;
 
   --leftSidePadding: 300px;
+  --contentPadding: 20px;
+
+  &.middle {
+    font-size: 1.5rem;
+  }
+  &.large {
+    font-size: 2rem;
+  }
   > div {
     position: fixed;
     top: 0;
     left: 0;
     width: var(--leftSidePadding);
     height: 100vh;
-    padding: 16px;
-    border-right: 1.5px solid #757575;
+    padding: var(--contentPadding);
+    border-right: 1.5px solid var(--grey);
   }
   > main {
-    width: calc(100% - var(--leftSidePadding));
+    padding: var(--contentPadding);
+    width: calc(100% - var(--leftSidePadding) - var(--contentPadding) * 2);
     margin-left: var(--leftSidePadding);
   }
 }

@@ -1,0 +1,12 @@
+.BorderBox {
+  border: 2px solid var(--green);
+  padding: 20px;
+  width: 100%;
+  &.square {
+    border-radius: 16px;
+  }
+  &.circle {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+}

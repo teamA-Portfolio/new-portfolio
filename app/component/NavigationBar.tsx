@@ -27,7 +27,7 @@ function NavigationBar() {
     <div className={styles.navigationBar}>
       <NavigationList icon={img_Profile} label="NICKNA" />
     </div>
-  )
+  );
 }
 
-export default NavigationBar
+export default NavigationBar;
