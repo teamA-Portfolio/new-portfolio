@@ -1,4 +1,4 @@
-import { BorderBox } from "./component/common/Box";
+import { BorderBox } from "@/app/component/common/Box";
 
 export default function Home() {
   return (
