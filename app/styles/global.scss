@@ -8,6 +8,13 @@ body {
   background-color: #252525;
 
   --leftSidePadding: 300px;
+
+  &.middle {
+    font-size: 1.5rem;
+  }
+  &.large {
+    font-size: 2rem;
+  }
   > div {
     position: fixed;
     top: 0;
