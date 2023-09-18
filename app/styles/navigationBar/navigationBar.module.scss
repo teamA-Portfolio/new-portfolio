@@ -1,4 +1,46 @@
-.navigationBar{
-  border-right: 1px solid #ddd;
-  width: 300px;
+.navigationSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  .navigationList {
+    display: inline;
+    position: relative;
+    margin-bottom: 20px;
+    &:not(:first-child){
+      &:hover img {
+        filter: invert(43%) sepia(27%) saturate(3544%) hue-rotate(150deg) brightness(99%) contrast(102%);
+      }
+    }
+    figure {
+      &:hover ::after {
+        transform: scaleX(1);
+      }
+      cursor: pointer;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      ::after {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        border: 1px solid #00ADAD;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform-origin: left;
+        transition: transform 250ms ease-out;
+        transform: scaleX(0);
+      } 
+      figcaption {
+        img {
+          filter: none;
+        }
+        p {
+          padding-left: 10px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
