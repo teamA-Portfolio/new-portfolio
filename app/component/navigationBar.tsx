@@ -1,9 +1,9 @@
 import React from 'react'
 
-function navigationBar() {
+function NavigationBar() {
   return (
     <div>navigationBar</div>
   )
 }
 
-export default navigationBar
+export default NavigationBar
