@@ -6,14 +6,17 @@ import NavigationBar from "./component/NavigationBar";
 import Projects from "./component/main/Projects";
 import Skills from "./component/main/Skills";
 import Intro from "./component/main/Intro";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface ScrollTopProps {
   scrollTop: boolean;
 }
-
+export interface sectionTagProps {
+  sectionTag: NodeListOf<HTMLElement> | null;
+}
 export default function Home() {
   const [scrollTop, setScrollTop] = useState<boolean>(true);
+  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(null)
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -23,10 +26,12 @@ export default function Home() {
         setScrollTop(true);
       }
     });
+    const abc = document.querySelectorAll("section");
+    setSectionTag(abc)
   }, []);
   return (
     <main>
-      <NavigationBar />
+      <NavigationBar sectionTag={sectionTag}/>
       <div>
         <Intro scrollTop={scrollTop} />
         <Profile />
