@@ -6,7 +6,7 @@ import NavigationBar from "./component/NavigationBar";
 import Projects from "./component/main/Projects";
 import Skills from "./component/main/Skills";
 import Intro from "./component/main/Intro";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface ScrollTopProps {
   scrollTop: boolean;
@@ -24,7 +24,6 @@ export default function Home() {
       }
     });
   }, []);
-
   return (
     <main>
       <NavigationBar />

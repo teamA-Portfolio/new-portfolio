@@ -1,8 +1,7 @@
 .navigationSection {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
-  .navigationList {
+  >.navigationList {
     display: inline;
     position: relative;
     margin-bottom: 20px;
