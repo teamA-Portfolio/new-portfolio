@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "@/app/styles/component/navigationBar.module.scss";
 import Image from "next/image";
+import { ScrollTopProps } from "../page";
 
 interface NavigationListType {
   icon: string;
@@ -25,12 +26,12 @@ function NavigationList({ icon, label }: NavigationListType) {
   );
 }
 
-function NavigationBar() {
+function NavigationBar({scrollTop}:ScrollTopProps) {
   useEffect(()=> {
     console.log("abc")
   },[])
   return (
-    <div className={styles.navigationSection}>
+    <div className={`${styles.navigationSection} ${!scrollTop && styles.scrollDrag}`}>
       {["profile", "skills", "project"].map((tabs, idx) => {
         return <NavigationList key={idx} icon={tabs} label={tabs} />;
       })}

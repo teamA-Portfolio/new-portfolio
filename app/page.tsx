@@ -7,6 +7,7 @@ import Projects from "./component/main/Projects";
 import Skills from "./component/main/Skills";
 import Intro from "./component/main/Intro";
 import { useEffect, useRef, useState } from "react";
+import AppStyler from "./component/AppStyler";
 
 export interface ScrollTopProps {
   scrollTop: boolean;
@@ -26,13 +27,14 @@ export default function Home() {
   }, []);
   return (
     <main>
-      <NavigationBar />
+      <NavigationBar scrollTop={scrollTop} />
       <div>
         <Intro scrollTop={scrollTop} />
         <Profile />
         <Skills />
         <Projects />
       </div>
+      <AppStyler scrollTop={scrollTop}/>
       <ScrollToTopBtn scrollTop={scrollTop} />
     </main>
   );

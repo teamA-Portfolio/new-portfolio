@@ -8,18 +8,20 @@
 }
 
 body {
-  background-color: var(--black);
+  // background-color: var(--black);
+  background-color: #0f1119;
   overflow-x: hidden;
 
   --leftSidePadding: 300px;
   --navigationBarPadding: 20px;
   --mainContentPadding: var(--navigationBarPadding) * 5;
+  --slightlyDarkBackground: rgba(0, 0, 0, 0.6);
 
-  
-  &.middle {
+  transition: 0.5s;
+  &.M {
     font-size: 1.5rem;
   }
-  &.large {
+  &.L {
     font-size: 2rem;
   }
   > div:nth-of-type(1) {
@@ -40,23 +42,21 @@ body {
       height: 100vh;
       padding: var(--navigationBarPadding);
       border-right: 1.5px solid var(--grey);
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: var(--slightlyDarkBackground);
     }
     > div:nth-of-type(2) {
-      padding: calc(100vh + var(--mainContentPadding))
-        calc(var(--mainContentPadding)) calc(var(--mainContentPadding));
+      padding: 100vh calc(var(--mainContentPadding))
+        calc(var(--mainContentPadding) / 2);
       width: calc(100% - var(--leftSidePadding));
       margin-left: var(--leftSidePadding);
       display: flex;
       flex-direction: column;
       gap: 200px 0;
+      &::nth-of-type(2) + div {
+        gap: 0;
+      }
       > section {
-        div {
-          background-color: rgba(0, 0, 0, 0.5);
-        }
-        height: 100vh;
-        border: 1px solid red;
-        padding: 50px;
+        padding: 50px 0;
       }
     }
     > button:nth-last-of-type(1) {
@@ -71,6 +71,7 @@ body {
       z-index: 100;
       opacity: 1;
       scale: 1;
+
       &.scrollTop {
         z-index: -1;
         opacity: 0;
@@ -79,10 +80,12 @@ body {
       > div {
         padding: 0;
         overflow: hidden;
+        transition: 1s;
+        background-color: var(--slightlyDarkBackground);
 
         &:hover {
           // --grey: rgb(117, 117, 117);
-          background-color: rgba(117, 117, 117, 0.35);
+          background-color: rgba(117, 117, 117, 0.3);
         }
 
         > img {
@@ -102,10 +105,4 @@ body {
       }
     }
   }
-}
-
-body {
-  background-color: 
-    // #1b2735 0%,
-    #0f1119;
 }

@@ -1,10 +1,11 @@
-import { BorderBox } from "../common/Box";
+import { SectionLayout } from "../common/layout";
 
 export default function Projects() {
   return (
     <section>
+      <SectionLayout label="projects">
       Projects
-      <BorderBox boxStyle="square">Projects</BorderBox>
+      </SectionLayout>
     </section>
   );
 }
