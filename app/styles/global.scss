@@ -47,7 +47,6 @@ body {
         calc(var(--mainContentPadding)) calc(var(--mainContentPadding));
       width: calc(100% - var(--leftSidePadding));
       margin-left: var(--leftSidePadding);
-
       display: flex;
       flex-direction: column;
       gap: 200px 0;
