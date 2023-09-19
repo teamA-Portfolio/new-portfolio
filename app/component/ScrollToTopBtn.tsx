@@ -1,23 +1,10 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { BorderBox } from "./common/Box";
+import { ScrollTopProps } from "../page";
 
-export default function ScrollToTopBtn() {
-  const [scrollTop, setScrollTop] = useState<boolean>(true);
+export default function ScrollToTopBtn({ scrollTop }: ScrollTopProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 0) {
-        setScrollTop(false);
-      } else if (scrollY === 0) {
-        setScrollTop(true);
-      }
-    });
-  }, []);
 
   return (
     <button className={scrollTop ? "scrollTop" : ""}>

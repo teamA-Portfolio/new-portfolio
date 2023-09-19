@@ -6,9 +6,10 @@
     display: inline;
     position: relative;
     margin-bottom: 20px;
-    &:not(:first-child){
+    &:not(:first-child) {
       &:hover img {
-        filter: invert(43%) sepia(27%) saturate(3544%) hue-rotate(150deg) brightness(99%) contrast(102%);
+        filter: invert(43%) sepia(27%) saturate(3544%) hue-rotate(150deg)
+          brightness(99%) contrast(102%);
       }
     }
     figure {
@@ -23,7 +24,7 @@
         position: absolute;
         content: "";
         display: inline-block;
-        border: 1px solid #00ADAD;
+        border: 1px solid #00adad;
         width: 100%;
         bottom: 0;
         left: 0;
@@ -31,7 +32,7 @@
         transform-origin: left;
         transition: transform 250ms ease-out;
         transform: scaleX(0);
-      } 
+      }
       figcaption {
         img {
           filter: none;
