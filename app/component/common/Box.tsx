@@ -1,4 +1,4 @@
-import styles from "@/app/styles/common/box.module.scss";
+import styles from "@/app/styles/component/common/box.module.scss";
 
 interface BorderBoxProps {
   children: any;

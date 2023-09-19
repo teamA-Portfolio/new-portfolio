@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/app/styles/main/profile.module.scss";
+import styles from "@/app/styles/component/main/profile.module.scss";
 import { BorderBox } from "../common/Box";
 
 export default function Profile() {

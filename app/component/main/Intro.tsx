@@ -1,5 +1,5 @@
 import { ScrollTopProps } from "@/app/page";
-import styles from "@/app/styles/main/intro.module.scss";
+import styles from "@/app/styles/component/main/intro.module.scss";
 
 export default function Intro({ scrollTop }: ScrollTopProps) {
   return (
