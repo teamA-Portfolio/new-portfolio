@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "@/app/styles/component/navigationBar.module.scss";
 import Image from "next/image";
 
@@ -26,9 +26,12 @@ function NavigationList({ icon, label }: NavigationListType) {
 }
 
 function NavigationBar() {
+  useEffect(()=> {
+    console.log("abc")
+  },[])
   return (
-    <div className={styles.navigationBar}>
-      {["profile", "project", "skills"].map((tabs, idx) => {
+    <div className={styles.navigationSection}>
+      {["profile", "skills", "project"].map((tabs, idx) => {
         return <NavigationList key={idx} icon={tabs} label={tabs} />;
       })}
     </div>
