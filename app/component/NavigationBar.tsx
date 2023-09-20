@@ -42,19 +42,14 @@ function NavigationList({
   );
 }
 
-<<<<<<< HEAD
-function NavigationBar({ scrollTop, sectionTag }: sectionTagProps) {
+function NavigationBar({ scrollTop }: ScrollTopProps) {
+  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(
+    null
+  );
   useEffect(() => {
-    console.log("abc");
-  }, []);
-=======
-function NavigationBar({scrollTop}:ScrollTopProps) {
-  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(null)
-  useEffect(()=> {
     const sectionList = document.querySelectorAll("section");
     setSectionTag(sectionList);
-  },[])
->>>>>>> 3f8ea9d48391d5c3c65db1b7ee5648203cf26fbc
+  }, []);
   return (
     <div
       className={`${styles.navigationSection} ${
