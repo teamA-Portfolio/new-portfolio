@@ -7,18 +7,27 @@ interface NavigationListType {
   icon: string;
   label: string;
   key: number;
-  myKey:number;
+  myKey: number;
   sectionTag: NodeListOf<HTMLElement> | null;
 }
 
-function NavigationList({ icon, label, myKey, sectionTag }: NavigationListType) {
+function NavigationList({
+  icon,
+  label,
+  myKey,
+  sectionTag,
+}: NavigationListType) {
   const moveSection = (myKey: number) => {
     //200 = 각 섹션의 flex gap 값
-    sectionTag !== null && window.scrollTo({ top: sectionTag[myKey +1].offsetTop - 200, behavior:"smooth"})
-  }
+    sectionTag !== null &&
+      window.scrollTo({
+        top: sectionTag[myKey + 1].offsetTop - 200,
+        behavior: "smooth",
+      });
+  };
   return (
     <div className={styles.navigationList}>
-      <figure onClick={()=>moveSection(myKey)}>
+      <figure onClick={() => moveSection(myKey)}>
         <Image
           src={`/images/navigationBar/${icon}.png`}
           width={50}
@@ -33,14 +42,26 @@ function NavigationList({ icon, label, myKey, sectionTag }: NavigationListType) 
   );
 }
 
-function NavigationBar({scrollTop, sectionTag}:sectionTagProps) {
-  useEffect(()=> {
-    console.log("abc")
-  },[])
+function NavigationBar({ scrollTop, sectionTag }: sectionTagProps) {
+  useEffect(() => {
+    console.log("abc");
+  }, []);
   return (
-    <div className={`${styles.navigationSection} ${!scrollTop && styles.scrollDrag}`}>
+    <div
+      className={`${styles.navigationSection} ${
+        !scrollTop && styles.scrollDrag
+      }`}
+    >
       {["profile", "skills", "project"].map((tabs, idx) => {
-        return <NavigationList key={idx} myKey={idx} icon={tabs} label={tabs} sectionTag={sectionTag}/>;
+        return (
+          <NavigationList
+            key={idx}
+            myKey={idx}
+            icon={tabs}
+            label={tabs}
+            sectionTag={sectionTag}
+          />
+        );
       })}
     </div>
   );

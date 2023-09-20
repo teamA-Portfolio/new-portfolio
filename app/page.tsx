@@ -17,7 +17,9 @@ export interface sectionTagProps extends ScrollTopProps {
 }
 export default function Home() {
   const [scrollTop, setScrollTop] = useState<boolean>(true);
-  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(null)
+  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(
+    null
+  );
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -28,8 +30,22 @@ export default function Home() {
       }
     });
     const abc = document.querySelectorAll("section");
-    setSectionTag(abc)
+    setSectionTag(abc);
+
+    const handleBeforeUnload = () => {
+      // 페이지가 새로고침될 때 화면을 맨 위로 스크롤
+      window.scrollTo(0, 0);
+    };
+
+    // beforeunload 이벤트에 핸들러를 추가
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // 컴포넌트 언마운트 시에 이벤트 핸들러 제거
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []);
+
   return (
     <main>
       <NavigationBar scrollTop={scrollTop} sectionTag={sectionTag} />
@@ -39,7 +55,7 @@ export default function Home() {
         <Skills />
         <Projects />
       </div>
-      <AppStyler scrollTop={scrollTop}/>
+      <AppStyler scrollTop={scrollTop} />
       <ScrollToTopBtn scrollTop={scrollTop} />
     </main>
   );
