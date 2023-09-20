@@ -8,11 +8,13 @@ interface NavigationListType {
   label: string;
   key: number;
   myKey:number;
+  sectionTag: NodeListOf<HTMLElement> | null;
 }
 
-function NavigationList({ icon, label, myKey }: NavigationListType) {
+function NavigationList({ icon, label, myKey, sectionTag }: NavigationListType) {
   const moveSection = (myKey: number) => {
-    console.log(myKey)
+    //200 = 각 섹션의 flex gap 값
+    sectionTag !== null && window.scrollTo({ top: sectionTag[myKey +1].offsetTop - 200, behavior:"smooth"})
   }
   return (
     <div className={styles.navigationList}>
@@ -38,7 +40,7 @@ function NavigationBar({scrollTop, sectionTag}:sectionTagProps) {
   return (
     <div className={`${styles.navigationSection} ${!scrollTop && styles.scrollDrag}`}>
       {["profile", "skills", "project"].map((tabs, idx) => {
-        return <NavigationList key={idx} myKey={idx} icon={tabs} label={tabs} />;
+        return <NavigationList key={idx} myKey={idx} icon={tabs} label={tabs} sectionTag={sectionTag}/>;
       })}
     </div>
   );
