@@ -16,9 +16,11 @@
     position: relative;
     margin-bottom: 20px;
     &:not(:first-child) {
-      &:hover img {
-        filter: invert(43%) sepia(27%) saturate(3544%) hue-rotate(150deg)
-          brightness(99%) contrast(102%);
+      figure {
+        &:hover img {
+          filter: invert(43%) sepia(27%) saturate(3544%) hue-rotate(150deg)
+            brightness(99%) contrast(102%);
+        }
       }
     }
     figure {

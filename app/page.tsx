@@ -12,12 +12,8 @@ import AppStyler from "./component/AppStyler";
 export interface ScrollTopProps {
   scrollTop: boolean;
 }
-export interface sectionTagProps extends ScrollTopProps {
-  sectionTag: NodeListOf<HTMLElement> | null;
-}
 export default function Home() {
   const [scrollTop, setScrollTop] = useState<boolean>(true);
-  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(null)
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -27,12 +23,10 @@ export default function Home() {
         setScrollTop(true);
       }
     });
-    const abc = document.querySelectorAll("section");
-    setSectionTag(abc)
   }, []);
   return (
     <main>
-      <NavigationBar scrollTop={scrollTop} sectionTag={sectionTag} />
+      <NavigationBar scrollTop={scrollTop}/>
       <div>
         <Intro scrollTop={scrollTop} />
         <Profile />

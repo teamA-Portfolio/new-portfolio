@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/app/styles/component/navigationBar.module.scss";
 import Image from "next/image";
-import { sectionTagProps } from "../page";
+import { ScrollTopProps } from "../page";
 
 interface NavigationListType {
   icon: string;
@@ -33,9 +33,11 @@ function NavigationList({ icon, label, myKey, sectionTag }: NavigationListType) 
   );
 }
 
-function NavigationBar({scrollTop, sectionTag}:sectionTagProps) {
+function NavigationBar({scrollTop}:ScrollTopProps) {
+  const [sectionTag, setSectionTag] = useState<NodeListOf<HTMLElement> | null>(null)
   useEffect(()=> {
-    console.log("abc")
+    const sectionList = document.querySelectorAll("section");
+    setSectionTag(sectionList);
   },[])
   return (
     <div className={`${styles.navigationSection} ${!scrollTop && styles.scrollDrag}`}>
