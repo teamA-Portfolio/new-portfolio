@@ -31,13 +31,12 @@ function NavigationList({ icon, label, myKey }: NavigationListType) {
   );
 }
 
-function NavigationBar({sectionTag}:sectionTagProps) {
+function NavigationBar({scrollTop, sectionTag}:sectionTagProps) {
   useEffect(()=> {
-    console.log(sectionTag, "useEffect")
+    console.log("abc")
   },[])
-  console.log(sectionTag,"야외")
   return (
-    <div className={styles.navigationSection}>
+    <div className={`${styles.navigationSection} ${!scrollTop && styles.scrollDrag}`}>
       {["profile", "skills", "project"].map((tabs, idx) => {
         return <NavigationList key={idx} myKey={idx} icon={tabs} label={tabs} />;
       })}
